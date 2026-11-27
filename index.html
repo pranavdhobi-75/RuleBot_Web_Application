@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuleBot | Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="app-shell">
+        <aside class="intro-panel">
+            <div class="brand">
+                <div class="brand-mark">R</div>
+                <span>RuleBot</span>
+            </div>
+
+            <div class="intro-copy">
+                <span class="eyebrow">PYTHON PROJECT</span>
+                <h1>Simple conversations.<br><span>Smart rules.</span></h1>
+                <p>A lightweight rule-based chatbot that responds to messages using predefined keywords and Python logic.</p>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature">
+                    <span class="feature-icon">01</span>
+                    <div><strong>Keyword matching</strong><small>Finds familiar words and phrases</small></div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">02</span>
+                    <div><strong>Instant responses</strong><small>Replies using predefined rules</small></div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">03</span>
+                    <div><strong>Fallback support</strong><small>Handles messages it doesn't recognize</small></div>
+                </div>
+            </div>
+
+            <div class="side-footer">BUILT WITH PYTHON + FLASK</div>
+        </aside>
+
+        <section class="chat-panel" aria-label="Chat with RuleBot">
+            <header class="chat-header">
+                <div class="bot-profile">
+                    <div class="avatar">R</div>
+                    <div>
+                        <h2>RuleBot Assistant</h2>
+                        <div class="online-status"><span></span> Online and ready</div>
+                    </div>
+                </div>
+                <button class="clear-button" id="clearChat" type="button" title="Clear conversation">
+                    <span aria-hidden="true">↻</span> Clear chat
+                </button>
+            </header>
+
+            <div class="chat-content" id="chatContent" aria-live="polite">
+                <div class="date-label"><span>YOUR CONVERSATION</span></div>
+                <div class="message-row bot-row">
+                    <div class="message-avatar">R</div>
+                    <div class="message-stack">
+                        <span class="sender">RULEBOT <time>NOW</time></span>
+                        <div class="message bot-message">
+                            Hey there! I'm RuleBot. I respond to messages using predefined rules. What would you like to ask?
+                        </div>
+                    </div>
+                </div>
+                <div class="suggestions" id="suggestions">
+                    <span>TRY ASKING</span>
+                    <div class="suggestion-list">
+                        <button type="button" data-message="Hello!">Say hello</button>
+                        <button type="button" data-message="What is your name?">Your name</button>
+                        <button type="button" data-message="Can you help me?">Ask for help</button>
+                    </div>
+                </div>
+            </div>
+
+            <form class="composer" id="chatForm">
+                <label class="sr-only" for="messageInput">Type your message</label>
+                <input id="messageInput" type="text" placeholder="Write a message..." autocomplete="off" maxlength="500">
+                <button class="send-button" type="submit" aria-label="Send message">
+                    <span>Send</span><span aria-hidden="true">➤</span>
+                </button>
+            </form>
+            <p class="composer-note">Rule-based responses • No AI model training required</p>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
