@@ -3,8 +3,6 @@ import random
 
 app = Flask(__name__)
 
-# Predefined keyword groups and responses.
-# The first matching keyword group determines the chatbot's reply.
 RESPONSES = {
     "greeting": {
         "keywords": ["hello", "hi", "hey", "good morning", "good evening"],
